@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -14,10 +15,11 @@
             <h1>Todo app</h1>
             <form action="/api/v1/todo" method="post">
                 <input type="text" name="todoName">
-                <button type="submit">Create</button>
+                <button type="submit"><i class="fa-solid fa-plus"></i></button>
             </form>
         </div>
         <div class="list">
+            <h2>List of todos</h2>
             <table>
                 <tr>
                     <th>Todo</th>
@@ -33,15 +35,15 @@
                             <form action="/api/v1/todo/<%= todo._id%>?_method=PUT" method="post">
                                 <input type="hidden" name="isCompleted" value=<%=!(todo.isCompleted)%>>
                                 <% if (todo.isCompleted) { %>
-                                    <button type="submit">Completed</button>
+                                    <button type="submit"><i class="fa-solid fa-check"></i></button>
                                     <% }else{ %>
-                                        <button type="submit">Not Completed</button>
+                                        <button type="submit"><i class="fa-solid fa-hourglass-start"></i></button>
                                         <%}%>
                             </form>
                         </td>
                         <td>
                             <form action="/api/v1/todo/<%= todo._id%>?_method=DELETE" method="post">
-                                <button type="submit">Delete</button>
+                                <button type="submit"><i class="fa-solid fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>

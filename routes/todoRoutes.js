@@ -4,11 +4,11 @@ import { auth } from '../middlewares/auth.js';
 
 let router=express.Router()
 
-router.post("/",auth,postTodo)
-router.get("/",auth,getTodos)
-router.get("/:id",auth,getTodo)
-router.put("/:id",auth,updateTodo)
-router.delete("/:id",auth,deleteTodo)
+router.post("/",postTodo)
+router.get("/",getTodos)
+router.get("/:id",getTodo)
+router.put("/:id",updateTodo)
+router.delete("/:id",deleteTodo)
 
 
 // router.route("/").get(getTodos).post(postTodo);
